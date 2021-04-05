@@ -1,0 +1,2 @@
+[InternetShortcut]
+URL=javascript:(function(){s=document.getSelection().toString().replace(/\n/g,'<br>');if(s)location.href='http://localhost:8080/accent?text='+encodeURIComponent(s);})();
