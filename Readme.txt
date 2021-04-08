@@ -23,8 +23,10 @@ How to use:
 3) select text (word, sentence, paragraph or even the whole page ) 
 4) click the bookmarklet (on the Bookmarks Toolbar)
 
-Remark.
+Remarks.
 The bookmarlet sends  "GET" requests to the server. Firefox sets no limit on the length of  URLs. Hence, the length of  selected text doesn't matter.
+
+The  binary file "dict.fsa"   is the serialization of a DAWG described in the  project "dawg-with-ruby" on github.
 
 To do:
 1) Correct and complete the dictionary.
