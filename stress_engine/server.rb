@@ -106,7 +106,7 @@ when 0 .. 127, 171, 187        then   chars<<i.chr
 when 1040 .. 1103                then   i=i-848; chars<<i.chr 
 when 1105                            then    chars<<"\270"   # yo
 when 1025                            then    chars<<"\250"    # YO
-when 8470                            then     chars<<"\271"    # N°
+when 8470                            then     chars<<"\271"    # NÂ°
 when 8211                            then     chars<<"\226"    # en dash
 when 8212, 8213                  then     chars<<"\227"    # em dash
 when 8230                            then     chars<<"\205"    # ellipsis
@@ -120,8 +120,9 @@ chunks=[]
 chunks<<"<body style=\"background-color:#f8f8f8;color:#000050\">\n"
 
 # Add stress marks
-selection.scan(/[-À-ÿ¨¸]+|[^-À-ÿ¨¸]+/m) do |wd|
-(chunks<<wd ; next) if wd=~/[^-À-ÿ¨¸]+/ 
+s0="-\300-\377\250\270"
+selection.scan(/[#{s0}]+|[^#{s0}]+/m) do |wd|
+(chunks<<wd ; next) if wd=~/[^#{s0}]+/ 
 dfs(0, h, wd, 0)
 if $replacements.empty? then chunks<<wd else chunks<< $replacements[0] end
 $candidate.clear
@@ -132,7 +133,9 @@ chunks<<"\n</body>"
 body=chunks.to_s
 
 # Convert from "Timesse Russ" to standard "windows-1251". Stress marks are placed after the accented vowel. A single quote means main stress, a backtick means secondary stress.
-s1, s2, s3 = "šŸ²³º¿", "ƒŒœ¡¥¼½¾", "àåèîóûışÿ"
+s1 = "\220\232\235\236\237\262\263\272\277"
+s2 = "\201\203\214\234\241\245\274\275\276"
+s3 = "\340\345\350\356\363\373\375\376\377"
 body= body.gsub(/[#{s1}]/){$&.tr(s1, s3)+"'"}
 body= body.gsub(/[#{s2}]/){$&.tr(s2, s3)+"\`"}
 # If "Timesse Russ" is installed, the three preceding 
