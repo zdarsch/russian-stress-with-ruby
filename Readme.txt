@@ -1,4 +1,5 @@
                       Russian Stress  with Ruby
+                     (with Ruby187 on Windows Xp)
 
  This project is based on the work of Jan Daciuk (http://www.jandaciuk.pl/fsa.html). It's main goal  is to  help me learn russian. I wanted to add stress marks to webpages while reading them online. 
 
