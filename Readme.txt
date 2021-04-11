@@ -25,7 +25,7 @@ How to use:
 4) click the bookmarklet (on the Bookmarks Toolbar)
 
 Remarks.
-The bookmarlet sends  "GET" requests to the server. Firefox sets no limit on the length of  URLs. Hence, the length of  selected text doesn't matter.
+The bookmarlet sends  "GET" requests to the server. Firefox 52 sets no limit on the length of  URLs. Hence, the length of  selected text doesn't matter.
 
 The  binary file "dict.fsa"   is the serialization of a DAWG described in the  project "dawg-with-ruby" on github.
 
