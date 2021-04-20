@@ -36,14 +36,14 @@ end#Node
 h = Hash.new { |hash, key| hash[key] = Node.new }
 x, edge = 0, []
 while s=f.read(4) do# s.length <= 4
-if s.target_is_next? then 
+if s[1]&4==4 then # target_is_next 
 f.pos = f.pos - s.length + 2 # s.length <= 4 
-edge=[ s.label, x+1, s.flags ]
+edge=[ s[0], x+1, s[1]&7 ]
 else
-edge=[ s.label, s.target, s.flags ] 
+edge=[ s[0], (s[1]>>3) + (s[2]<<5) + (s[3]<<13), s[1]&7 ] 
 end
 h[x].edges << edge
-x+=1 if s.node_final?
+x+=1 if s[1]&2==2# edge is last_in_node
 end#while
 
 
