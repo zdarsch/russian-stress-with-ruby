@@ -33,31 +33,6 @@ def initialize
 end
 end#Node
 
-
-class String
-# (2<= (string.length) <=4)	
-def label
-return self[0]
-end
-
-def flags
-return self[1]&7
-end
-
-def node_final?
-return self[1]&2==2
-end
-
-def target_is_next?
-return self[1]&4==4
-end
-	
-def target
-return  (self[1]>>3) + (self[2]<<5) + (self[3]<<13)
-end
-
-end#String
-
 h = Hash.new { |hash, key| hash[key] = Node.new }
 x, edge = 0, []
 while s=f.read(4) do# s.length <= 4
