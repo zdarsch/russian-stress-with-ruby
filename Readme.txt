@@ -29,6 +29,8 @@ The bookmarlet sends  "GET" requests to the server. Firefox 52 sets no limit on 
 
 The  binary file "dict.fsa"   is the serialization of a DAWG described in the  project "dawg-with-ruby" on github.
 
+The folder stress_in_popups is an experiment involving tooltips, ajax(fetch), a simple unsigned webextension and a local server.
+
 To do:
 1) Correct and complete the dictionary.
 2) A  dictionary of hints and reminders would be useful in those cases where the stress depends on context.
