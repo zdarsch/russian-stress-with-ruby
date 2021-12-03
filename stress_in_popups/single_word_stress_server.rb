@@ -79,7 +79,7 @@ end#dfs
      if request.query['word'] # for get request
      str = request.query['word'] #here str is a single word
      str=CGI.unescape(str)
-#conversion to windows 1951  
+#conversion to windows 1251  
 str=str.unpack("U*").map{ |x| W2u.invert[x] }.pack("C*")
 
 dfs(0, h, str, 0)
