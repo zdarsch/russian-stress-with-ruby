@@ -25,16 +25,13 @@ How to use:
 4) click the bookmarklet (on the Bookmarks Toolbar)
 
 Remarks.
-The bookmarlet sends  "GET" requests to the server. Firefox 52 sets no limit on the length of  URLs. Hence, the length of  selected text doesn't matter.
-
-The  binary file "dict.fsa"   is the serialization of a DAWG described in the  project "dawg-with-ruby" on github.
-
-The folder stress_in_popups is an experiment involving tooltips, ajax(fetch), a simple unsigned webextension and a local server.
+1) The bookmarlet sends  "GET" requests to the server. Firefox 52 sets no limit on the length of  URLs. Hence, the length of  selected text doesn't matter.
+2) The  binary file "dict.fsa"   is the serialization of a DAWG described in the  project "dawg-with-ruby" on github.
+3) The folders "alternative_stress_engine, "post_request" and "stress_in_popups", are experiments with new ideas, "POST" requests,  tooltips and simple unsigned webextensions. 
 
 To do:
-1) Correct and complete the dictionary.
+1) Correct and complete the dictionary "dict.fsa".
 2) A  dictionary of hints and reminders would be useful in those cases where the stress depends on context.
-3) A web extension would overcome the cross origin issues of  "POST" requests.
 
 
 
