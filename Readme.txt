@@ -7,19 +7,19 @@ When the  stress position  depends on meaning, case, tense or other external fac
 
 Therefore,  the present  stress engine only deals  with context independent stress.
 
-The   engine  has 3 parts:
-1)  server.rb,  opens a webrick local server on port 8080
-1)  dict.fsa,  a binary file, holds a list of accented word forms 
-3)  accentuate.url, a  bookmarklet, sends requests to the server 
+The   stress engine  has 3 components:
+1)  "stress_engine/server.rb" opens a webrick local server
+1)  "stress_engine/dict.fsa",  a finite state automaton, holds a list of accented word forms 
+3)  "stress_engine/accentuate.url", a  bookmarklet, sends requests to the server 
 
 Warning: I use Firefox 52 on Windows Xp.  No attempt was made to adapt the bookmarlet to other browsers. 
 
 How to install: 
-1) keep server.rb and dict.fsa in the same folder
-2) Click and drag accentuate.url to the Bookmarks Toolbar 
+1) keep ""stress_engine/server.rb" and ""stress_engine/dict.fsa" in the same folder
+2) drag and drop ""stress_engine/accentuate.url" onto the Bookmarks Toolbar 
 
 How to use:
-1) launch  server.rb
+1) launch  "stress_engine/server.rb"
 2) open a web page  with Firefox (for instance, http://gippius.com/lib/short-story/gorny-kizil.html)
 3) select text (word, sentence, paragraph or even the whole page ) 
 4) click the bookmarklet (on the Bookmarks Toolbar)
